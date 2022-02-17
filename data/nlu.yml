@@ -1,0 +1,527 @@
+version: "3.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hiya
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - let's go
+    - hey dude
+    - good afternoon
+
+- intent: how_are_you
+  examples: |
+    - how are you?
+    - and you?
+    - I'm good, how are you?
+    - good, thank you, how are you?
+    - not bad, how are you doing?
+    - I'm ok, and you?
+    - how's your day?
+    - I'm great and how are you?
+    - I'm good, how about you?
+    - I'm sad, how about you?
+    - not good, and how is your day?
+    - bad, how are you?
+    - thanks for asking, I'm good, and how are you?
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - see you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+
+- intent: who_are_you
+  examples: |
+    - who are you?
+    - what are you?
+    - what is your purpose?
+    - what's your name?
+    - what is your goal?
+    - what are you trying to accomplish?
+    - are you human?
+    - are you a robot?
+    - are you real?
+
+- intent: affirm
+  examples: |
+    - yes
+    - yes, please
+    - I said yes
+    - I do
+    - I am
+    - Yeah I do
+    - yup
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yeah
+    - sure
+    - ok
+    - okay
+    - it is
+    - I do
+    - it does
+    - I did
+
+- intent: deny
+  examples: |
+    - no
+    - I said no
+    - I don't
+    - I do not
+    - I'm not
+    - no, I'm not
+    - nope
+    - no thanks
+    - never
+    - nah
+    - not really
+    - it isn't
+    - it is not
+    - I don't
+    - it doesn't
+    - I didn't
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - I'm ok
+    - I'm fine
+    - nice to meet you too
+    - you too
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremely sad
+    - so saad
+    - so sad
+
+- intent: mood_bored
+  examples: |
+    - I'm bored
+    - I don't even know
+    - I don't have energy
+    - I'm feeling mellow
+    - boredom is killing me
+    - I have nothing to do
+    - I'm not doing anything
+    - I'm feeling weary
+    - so bored
+    - I want some entertainment
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: out_of_scope
+  examples: |
+    - what is your purpose?
+    - who designed you?
+    - who is your creator?
+    - who are you?
+    - what do you do?
+    - when were you created?
+    - what is your goal?
+    - what do you want?
+    - what do you want to know?
+
+- intent: day_good
+  examples: |
+    - it was good
+    - my day is good
+    - was ok
+    - it was great
+    - my day was good
+    - my day isn't bad, thanks
+    - yeah it's ok, thanks
+
+- intent: day_bad
+  examples: |
+    - it is bad
+    - my day is not good
+    - my day wasn't good
+    - is not ok
+    - it is awful
+    - my day was awful
+    - my day was bad, unfortunately
+
+- intent: i_study
+  examples: |
+    - I study [literature](subject)
+    - I study [computer science](subject)
+    - I study [politics](subject)
+    - I do [economics](subject)
+    - I do [maths](subject)
+    - I do [anthropology](subject)
+    - I'm doing
+    - [computing science](subject)
+    - [computer science](subject)
+    - [software engineering](subject)
+    - [engineering](subject)
+    - [medicine](subject)
+    - [arts](subject)
+    - [literature](subject)
+    - [maths](subject)
+    - [physics](subject)
+    - [law](subject)
+    - [history](subject)
+    - [languages](subject)
+    - [politics](subject)
+    - [psychology](subject)
+    - [economics](subject)
+    - [social sciences](subject)
+    - [journalism](subject)
+    - [education](subject)
+
+- intent: place_from
+  # it's called 'country', but I'm including continents as some
+  # users might answer that instead of a specific country
+  examples: |
+    - [United Kingdom](country)
+    - I'm from [United Kingdom](country)
+    - I'm from [Scotland](country)
+    - I'm from [Greece](country)
+    - I am from [Egypt](country)
+    - I am from [Poland](country)
+    - from [the States](country)
+    - from [France](country)
+    - [Scotland](country)
+    - [England](country)
+    - [the UK](country)
+    - [United Kingdom](country)
+    - [Europe](country)
+    - [Asia](country)
+    - [China](country)
+    - [the States](country)
+    - [United States](country)
+    - [Poland](country)
+    - [France](country)
+    - [Germany](country)
+    - [Italy](country)
+    - [Greece](country)
+    - [Romania](country)
+    - [Bulgaria](country)
+    - [Egypt](country)
+    - [Spain](country)
+
+- intent: country_good
+  examples: |
+    - it's nice
+    - it's ok
+    - I don't mind
+    - I like the culture
+    - it's my home
+    - I like it
+    - very good
+    - I love it
+    - great!
+    - amazing
+    - it's not bad
+    - I guess it's ok
+    - it's a great place
+
+- intent: country_bad
+  examples: |
+    - I don't like it
+    - it does not appeal to me
+    - it's not a good place
+    - it's not a nice location
+    - I hate it
+    - it's not the best country
+    - I don't like it at all
+    - it's very unpleasant
+    - it's very poor
+
+- intent: misunderstanding
+  examples: |
+    - that's not what I meant
+    - I meant something different
+    - you misunderstood me
+    - you misheard me
+    - that was not my intention
+    - that's not what I was implying
+    - you misread what I was saying
+    - you mistook my meaning
+    - I had a different meaning in mind
+    - can I repeat what I said?
+    - let me repeat
+    - that's not what I said
+
+- intent: food
+  examples: |
+    - [pizza](food)
+    - my favourite food is [pizza](food)
+    - [spaghetti](food)
+    - [burgers](food)
+    - my favourite food is a [burger](food)
+    - [salad](food)
+    - [soup](food)
+    - my favourite food is a [soup](food)
+    - [cookies](food)
+    - [cake](food)
+    - [meatballs](food)
+    - I like [meatballs](food) the most
+    - [curry](food)
+    - [curry](food) is my favourite food 
+    - [burrito](food)
+    - [tacos](food)
+    - [mac and cheese](food)
+    - [sushi](food)
+    - I like [sushi](food) the most
+    - [ramen](food)
+
+- intent: hobby
+  examples: |
+    - skiing
+    - cooking
+    - reading
+    - music
+    - movies
+    - sport
+    - gym
+    - writing
+    - singing
+    - dancing
+    - hiking
+    - bouldering
+    - to dance
+    - to read
+
+- intent: instrument
+  examples: |
+    - I think the [guitar](instrument)
+    - I think the - [electric guitar](instrument)
+    - I would play the [piano](instrument)
+    - I would play the [saxophone](instrument)
+    - I always wanted to learn how to play the [violin](instrument)
+    - I always wanted to learn how to play the [piano](instrument)
+    - I guess the [drums](instrument)
+    - [guitar](instrument)
+    - [piano](instrument)
+    - [violin](instrument)
+    - [electric guitar](instrument)
+    - [drums](instrument)
+    - [flute](instrument)
+    - [bass](instrument)
+    - [saxophone](instrument)
+    - [cello](instrument)
+    - [clarinet](instrument)
+
+- intent: thank_you
+  examples: |
+    - thank you
+    - thanks
+    - cheers
+    - sincerely grateful
+    - I appreciate that
+    - you really helped me
+    - thank you for this
+    - I'm grateful
+
+- intent: dont_know_what_to_say
+  examples: |
+    - I'm not sure what to say
+    - I don't know what to say
+    - What should I say?
+    - I'm at a loss for words
+    - I'm stumped
+    - I don't have the right words
+    - I don't know how to answer
+    - I don't know the answer
+    - I don't know
+    - I'm not sure
+    - I don't know how to answer this
+    - I don't know the answer
+    - I'm clueless
+    - don't know, sorry
+    - I'm not certain
+
+- intent: nice_to_meet_you
+  examples: |
+    - nice to meet you too
+    - it was great to meet you
+    - it was great talking to you
+    - I enjoyed our conversation
+    - I enjoyed talking to you
+    - I liked getting to know you
+    - thanks for the chat
+
+- intent: genre
+  examples: |
+    - [rock](genre)
+    - [rock](genre) music
+    - [jazz](genre)
+    - [hip hop](genre)
+    - [hip hop](genre) is great!
+    - [pop](genre)
+    - [pop](genre) music
+    - [heavy metal](genre)
+    - [metal](genre)
+    - [folk music](genre)
+    - [blues](genre)
+    - [country](genre)
+    - [electronic](genre)
+    - [dance](genre)
+    - I like [rock](genre)
+    - I like [dance](genre)
+    - I like [rock](genre) music
+    - I like [hip hop](genre)
+    - I think [electronic](genre) music is my favourite
+    - I think [pop](genre) music music is my favourite
+    - probably [hip hop](genre)
+    - I think [pop](genre)
+
+- intent: eating_out_or_ordering
+  examples: |
+    - I prefer eating out
+    - I prefer ordering food
+    - ordering food
+    - ordering food is my choice
+    - eating out is the best
+    - eating out
+    - I like going to restaurants
+    - I like eating at home
+    - I don't usually order food
+    - I don't enjoy ordering food
+
+- intent: living_in_a_city
+  examples: |
+    - the city
+    - I prefer living in a city
+    - city
+    - I like living in a city
+    - city is my first choice
+    - living in a city is the best
+    - I would never move out of a city
+    - this city is the best
+    - I prefer cities
+    - I like big cities
+    - I think in a city
+    - a city
+
+- intent: living_in_the_countryside
+  examples: |
+    - the countryside
+    - I prefer living in the countryside
+    - countryside
+    - I like living in the countryside
+    - countryside is my favourite
+    - countryside is my first choice
+    - living in the countryside is the best
+    - I would never move out of the countryside
+    - the countryside is the best
+    - I prefer the countryside        
+    - I like the countryside
+    - I think in the countryside
+    - a countryside
+
+- intent: prefer_board_games
+  examples: |
+    - I prefer board games
+    - I like board games
+    - board games
+    - board games are my favourite
+    - I like playing board games the most
+    - my preference is playing board games
+    - I prefer to play board games
+    - I enjoy playing board games
+
+- intent: prefer_video_games
+  examples: |
+    - I prefer video games
+    - I like video games
+    - video games
+    - video games are my favourite
+    - I like playing video games the most
+    - my preference is playing video games
+    - I prefer to play video games
+    - I enjoy playing video games
+
+- intent: board_game
+  examples: |
+    - clue
+    - monopoly
+    - scrabble
+    - battleship
+    - risk
+    - exploding kittens
+    - stratego
+    - I like scrabble the most
+    - exploding kittens is my favourite game
+    - my favourite game is catan
+    - jenga is my favourite
+    - jenga
+    - catan
+
+- intent: video_game
+  examples: |
+    - minecraft
+    - gta
+    - fortnite
+    - the legend of zelda
+    - the witcher
+    - call of duty
+    - the last of us
+    - world of warcraft
+    - wii
+    - animal crossing
+    - star wars
+    - overwatch
+    - counter strike
+
+- intent: colour
+  examples: |
+    - [blue](colour)
+    - [black](colour)
+    - [red](colour)
+    - [white](colour)
+    - [purple](colour)
+    - [green](colour)
+    - [yellow](colour)
+    - [orange](colour)
+    - my favourite colour is [blue](colour)
+    - I think [purple](colour)
+    - I think [green](colour)
+    - probably [yellow](colour) colour
+    - probably [red](colour)
+    - I think [green](colour) is my favourite colour
+    - I prefer [black](colour)
+    - I prefer [orange](colour) colour
+    - I like [brown](colour)
+    - I like [orange](colour) colour

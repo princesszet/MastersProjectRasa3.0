@@ -1,0 +1,443 @@
+version: "3.0"
+
+stories:
+
+- story: The user greets the robot
+  steps:
+  - or:
+      - intent: greet
+      - intent: affirm
+  - action: utter_greet
+
+- story: The user asks what the robot is
+  steps:
+  - intent: who_are_you
+  - action: utter_i'm_a_robot
+
+- story: The user asks the robot how it is today + wants a fact
+  steps:
+  - intent: how_are_you
+  - action: utter_i'm_good_too_want_a_fact
+  - intent: affirm
+  # here the robot also asks "How is your day?"
+  - action: action_tell_a_fact
+
+- story: The user asks the robot how it is today + doesn't want a fact
+  steps:
+  - intent: how_are_you
+  - action: utter_i'm_good_too_want_a_fact
+  - intent: deny
+  - action: utter_ask_how_was_your_day
+
+- story: The user is in a good mood + wants a fact
+  steps:
+  - or:
+    - intent: mood_great
+    - intent: thank_you
+  - action: utter_happy_want_a_fact
+  - intent: affirm
+  # here the robot also asks "How is your day?"
+  - action: action_tell_a_fact
+
+- story: The user is in a good mood + doesn't want a fact
+  steps:
+  - or:
+    - intent: mood_great
+    - intent: thank_you
+  - action: utter_happy_want_a_fact
+  - intent: deny
+  - action: utter_ask_how_was_your_day
+
+- story: The user is in a bad mood + wants a fact
+  steps:
+  - or:
+    - intent: mood_unhappy
+    - intent: thank_you
+  - action: utter_sad_want_a_fact
+  - intent: affirm
+  # here the robot also asks "How was your day?"
+  - action: action_tell_a_fact
+
+- story: The user is in a bad mood + doesn't want a fact
+  steps:
+  - or:
+      - intent: mood_unhappy
+      - intent: thank_you
+  - action: utter_sad_want_a_fact
+  - intent: deny
+  - action: utter_ask_how_was_your_day
+
+- story: The user is bored mood + wants a fact
+  steps:
+  - or:
+    - intent: mood_bored
+    - intent: thank_you
+  - action: utter_bored_want_a_fact
+  - intent: affirm
+  # here the robot also asks "How was your day?"
+  - action: action_tell_a_fact
+
+- story: The user is bored + doesn't want a fact
+  steps:
+  - intent: mood_bored
+  - or:
+      - intent: mood_great
+      - intent: thank_you
+  - action: utter_bored_want_a_fact
+  - intent: deny
+  - action: utter_ask_how_was_your_day
+
+- story: Day was good + user wants the forecast + likes studying
+  steps:
+  - intent: day_good
+  - action: utter_day_good_ask_about_the_forecast
+  - intent: affirm
+  # here the robot also asks what the user studies
+  - action: action_tell_the_weather_ask_what_do_you_study
+  - intent: i_study
+  - action: utter_ask_if_like_studying
+  - intent: affirm
+  - action: utter_positive_lots_to_learn_where_from
+
+- story: Day was good + user wants the forecast + doesn't like studying
+  steps:
+  - intent: day_good
+  - action: utter_day_good_ask_about_the_forecast
+  - intent: affirm
+  # here the robot also asks what the user studies
+  - action: action_tell_the_weather_ask_what_do_you_study
+  - intent: i_study
+  - action: utter_ask_if_like_studying
+  - intent: deny
+  - action: utter_negative_lots_to_learn_where_from
+
+- story: Day was good + user doesn't wants the forecast + likes studying
+  steps:
+  - intent: day_good
+  - action: utter_day_good_ask_about_the_forecast
+  - intent: deny
+  - action: utter_ask_what_do_you_study
+  - intent: i_study
+  - action: utter_ask_if_like_studying
+  - intent: affirm
+  - action: utter_positive_lots_to_learn_where_from
+
+- story: Day was good + user doesn't wants the forecast + doesn't like studying
+  steps:
+  - intent: day_good
+  - action: utter_day_good_ask_about_the_forecast
+  - intent: deny
+  - action: utter_ask_what_do_you_study
+  - intent: i_study
+  - action: utter_ask_if_like_studying
+  - intent: deny
+  - action: utter_negative_lots_to_learn_where_from
+
+- story: Day was bad + user wants the forecast + likes studying
+  steps:
+  - intent: day_bad
+  - action: utter_day_bad_ask_about_the_forecast
+  - intent: affirm
+  # here the robot also asks what the user studies
+  - action: action_tell_the_weather_ask_what_do_you_study
+  - intent: i_study
+  - action: utter_ask_if_like_studying
+  - intent: affirm
+  - action: utter_positive_lots_to_learn_where_from
+
+- story: Day was bad + user wants the forecast + doesn't like studying
+  steps:
+  - intent: day_bad
+  - action: utter_day_bad_ask_about_the_forecast
+  - intent: affirm
+  # here the robot also asks what the user studies
+  - action: action_tell_the_weather_ask_what_do_you_study
+  - intent: i_study
+  - action: utter_ask_if_like_studying
+  - intent: deny
+  - action: utter_negative_lots_to_learn_where_from
+
+- story: Day was bad + user doesn't wants the forecast + likes studying
+  steps:
+  - intent: day_bad
+  - action: utter_day_bad_ask_about_the_forecast
+  - intent: deny
+  - action: utter_ask_what_do_you_study
+  - intent: i_study
+  - action: utter_ask_if_like_studying
+  - intent: affirm
+  - action: utter_positive_lots_to_learn_where_from
+
+- story: Day was bad + user doesn't wants the forecast + doesn't like studying
+  steps:
+  - intent: day_bad
+  - action: utter_day_bad_ask_about_the_forecast
+  - intent: deny
+  - action: utter_ask_what_do_you_study
+  - intent: i_study
+  - action: utter_ask_if_like_studying
+  - intent: deny
+  - action: utter_negative_lots_to_learn_where_from
+
+- story: The country is correct + going on holidays
+  steps:
+  - intent: place_from
+  - action: utter_country
+  - intent: affirm
+  - action: utter_ask_about_holidays
+  - intent: affirm
+  # here the robot also asks if the user prefers living in the city or countryside
+  - action: utter_jealous
+
+- story: The country is correct + not going on holidays
+  steps:
+  - intent: place_from
+  - action: utter_country
+  - intent: affirm
+  - action: utter_ask_about_holidays
+  - intent: deny
+  # here the robot also asks if the user prefers living in the city or countryside
+  - action: utter_same
+
+- story: The country is incorrect + going on holidays
+  steps:
+  - intent: place_from
+  - action: utter_country
+  - intent: deny
+  - action: utter_repeat_where_from
+  - intent: place_from
+  - action: utter_ask_about_holidays
+  - intent: affirm
+  # here the robot also asks if the user prefers living in the city or countryside
+  - action: utter_jealous
+
+- story: The country is incorrect + not going on holidays
+  steps:
+  - intent: place_from
+  - action: utter_country
+  - intent: deny
+  - action: utter_repeat_where_from
+  - intent: place_from
+  - action: utter_ask_about_holidays
+  - intent: deny
+  # here the robot also asks if the user prefers living in the city or countryside
+  - action: utter_same
+
+- story: The user prefers living in a city + ask about favourite food
+  steps:
+  - intent: living_in_a_city
+  - action: utter_react_to_a_city_and_ask_about_food
+
+- story: The user prefers living in the countryside, ask about favourite food
+  steps:
+  - intent: living_in_the_countryside
+  - action: utter_react_to_the_countryside_and_ask_about_food
+
+- story: The user likes trying new dishes + interested in history
+  steps:
+  - intent: food
+  - action: utter_prefer_eating_out_or_ordering
+  - intent: eating_out_or_ordering
+  - action: utter_enjoy_trying_new_dishes
+  - intent: affirm
+  # here the robot also asks if interested in history
+  - action: utter_like_trying_new_dishes
+  - intent: affirm
+  # here the robot also asks about hobbies
+  - action: action_tell_random_historical_fact
+
+- story: The user doesn't like trying new dishes + interested in history
+  steps:
+  - intent: food
+  - action: utter_prefer_eating_out_or_ordering
+  - intent: eating_out_or_ordering
+  - action: utter_enjoy_trying_new_dishes
+  - intent: deny
+  # here the robot also asks if interested in history
+  - action: utter_doesn't_like_trying_new_dishes
+  - intent: affirm
+  # here the robot also asks about hobbies
+  - action: action_tell_random_historical_fact
+
+- story: The user likes trying new dishes + not interested in history
+  steps:
+  - intent: food
+  - action: utter_prefer_eating_out_or_ordering
+  - intent: eating_out_or_ordering
+  - action: utter_enjoy_trying_new_dishes
+  - intent: affirm
+  # here the robot also asks if interested in history
+  - action: utter_like_trying_new_dishes
+  - intent: deny
+  - action: utter_ask_about_hobbies
+
+- story: The user doesn't like trying new dishes + not interested in history
+  steps:
+  - intent: food
+  - action: utter_prefer_eating_out_or_ordering
+  - intent: eating_out_or_ordering
+  - action: utter_enjoy_trying_new_dishes
+  - intent: deny
+  # here the robot also asks if interested in history
+  - action: utter_doesn't_like_trying_new_dishes
+  - intent: deny
+  - action: utter_ask_about_hobbies
+
+- story: The user shares their hobby + prefers video games + plays some instrument
+  steps:
+  - intent: hobby
+  - action: utter_ask_board_or_video_games
+  - intent: prefer_video_games
+  - action: utter_ask_your_favourite_video_game
+  - intent: video_game
+  - action: utter_ask_about_favourite_colour
+  - intent: colour
+  - action: utter_play_any_instruments
+  - intent: affirm
+  - action: utter_ask_what_instrument
+
+- story: The user shares their hobby + prefers video games + plays a specific instrument
+  steps:
+  - intent: hobby
+  - action: utter_ask_board_or_video_games
+  - intent: prefer_video_games
+  - action: utter_ask_your_favourite_video_game
+  - intent: video_game
+  - action: utter_ask_about_favourite_colour
+  - intent: colour
+  - action: utter_play_any_instruments
+
+- story: The user shares their hobby + prefers video games + doesn't play any instrument
+  steps:
+  - intent: hobby
+  - action: utter_ask_board_or_video_games
+  - intent: prefer_video_games
+  - action: utter_ask_your_favourite_video_game
+  - intent: video_game
+  - action: utter_ask_about_favourite_colour
+  - intent: colour
+  - action: utter_play_any_instruments
+  - intent: deny
+  - action: utter_ask_what_instrument_would_play
+
+- story: The user shares their hobby + prefers board games + plays some instrument
+  steps:
+  - intent: hobby
+  - action: utter_ask_board_or_video_games
+  - intent: prefer_board_games
+  - action: utter_ask_your_favourite_board_game
+  - intent: board_game
+  - action: utter_ask_about_favourite_colour
+  - intent: colour
+  - action: utter_play_any_instruments
+  - intent: affirm
+  - action: utter_ask_what_instrument
+
+- story: The user shares their hobby + prefers board games + plays a specific instrument
+  steps:
+  - intent: hobby
+  - action: utter_ask_board_or_video_games
+  - intent: prefer_board_games
+  - action: utter_ask_your_favourite_board_game
+  - intent: board_game
+  - action: utter_ask_about_favourite_colour
+  - intent: colour
+  - action: utter_play_any_instruments
+
+- story: The user shares their hobby + prefers board games + doesn't play any instrument
+  steps:
+  - intent: hobby
+  - action: utter_ask_board_or_video_games
+  - intent: prefer_board_games
+  - action: utter_ask_your_favourite_board_game
+  - intent: board_game
+  - action: utter_ask_about_favourite_colour
+  - intent: colour
+  - action: utter_play_any_instruments
+  - intent: deny
+  - action: utter_ask_what_instrument_would_play
+
+- story: Comment on the instrument + ask about fave music genre + say goodbye
+  steps:
+  - intent: instrument
+  - action: utter_react_to_instrument_and_ask_about_music_genre
+  - intent: genre
+  - action: utter_react_to_music_genre_time_to_say_bye
+  - or:
+      - intent: goodbye
+      - intent: nice_to_meet_you
+      - intent: thank_you
+  - action: utter_goodbye
+
+- story: Say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: The user meant something else
+  steps:
+  - intent: misunderstanding
+  - action: action_different_reactions_to_misunderstanding
+
+- story: User says thank you
+  steps:
+  - intent: thank_you
+  - action: utter_you're_welcome
+
+- story: User doesn't know what to say + didn't talk about food
+  steps:
+  - intent: dont_know_what_to_say
+  - action: utter_have_we_talked_about_food
+  - intent: deny
+  - action: utter_ask_about_favourite_food
+
+- story: User doesn't know what to say + didn't talk about food (goes to the food story)
+  steps:
+  - intent: dont_know_what_to_say
+  - action: utter_have_we_talked_about_food
+
+- story: User doesn't know what to say + talked about food + didn't talk about hobbies (goes to the hobby story)
+  steps:
+  - intent: dont_know_what_to_say
+  - action: utter_have_we_talked_about_food
+  - intent: affirm
+  - action: utter_have_we_talked_about_hobbies
+  - intent: deny
+  - action: utter_alternatively_ask_about_hobbies
+
+- story: User doesn't know what to say + talked about food + talked about hobbies
+  steps:
+  - intent: dont_know_what_to_say
+  - action: utter_have_we_talked_about_food
+  - intent: affirm
+  - action: utter_have_we_talked_about_hobbies
+  - intent: affirm
+  - action: utter_alternatively_ask_where_you_are_from
+
+- story: User has an out-of-scope question and haven't talked about food yet
+  steps:
+  - intent: out_of_scope
+  # the bot asks if they have talked about the user's favourite food
+  - action: utter_out_of_scope
+  - intent: deny
+  - action: utter_ask_about_favourite_food
+
+- story: User has an out-of-scope question and have talked about food but not about hobbies
+  steps:
+  - intent: out_of_scope
+  # the bot asks if they have talked about the user's favourite food
+  - action: utter_out_of_scope
+  - intent: affirm
+  - action: utter_have_we_talked_about_hobbies
+  - intent: deny
+  - action: utter_alternatively_ask_about_hobbies
+
+- story: User has an out-of-scope question and have talked about food and hobbies
+  steps:
+  - intent: out_of_scope
+  # the bot asks if they have talked about the user's favourite food
+  - action: utter_out_of_scope
+  - intent: affirm
+  - action: utter_have_we_talked_about_hobbies
+  - intent: affirm
+  - action: utter_alternatively_ask_where_you_are_from

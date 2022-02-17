@@ -1,0 +1,18 @@
+version: "3.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a social robot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_i'm_a_robot
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: action_ask_the_user_to_rephrase

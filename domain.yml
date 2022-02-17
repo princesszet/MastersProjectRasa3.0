@@ -1,0 +1,255 @@
+version: "3.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - mood_bored
+  - bot_challenge
+  - out_of_scope
+  - day_good
+  - day_bad
+  - i_study
+  - place_from
+  - country_good
+  - country_bad
+  - misunderstanding
+  - who_are_you
+  - hobby
+  - thank_you
+  - dont_know_what_to_say
+  - nice_to_meet_you
+  - food
+  - instrument
+  - country
+  - subject
+  - genre
+  - colour
+  - how_are_you
+  - eating_out_or_ordering
+  - living_in_a_city
+  - living_in_the_countryside
+  - prefer_board_games
+  - prefer_video_games
+  - board_game
+  - video_game
+
+entities:
+  - country
+  - subject
+  - food
+  - instrument
+  - genre
+  - colour
+
+slots:
+  country:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: country
+  subject:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: subject
+  food:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: food
+  instrument:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: instrument
+  genre:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: city
+  colour:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: genre
+
+actions:
+  - action_tell_a_joke
+  - action_tell_a_fact
+  - action_tell_the_weather_ask_what_do_you_study
+  - action_confirm_the_country
+  - action_tell_random_historical_fact
+  - action_different_reactions_to_misunderstanding
+  - action_ask_the_user_to_rephrase
+
+responses:
+  utter_greet:
+    - text: "Hey! It's nice to meet you today. How are you?"
+
+  utter_cheer_up:
+    - text: "Anyone can have a bad day! You're ok. Did that help you?"
+
+  utter_me_too:
+    - text: "Me too!"
+
+  utter_i'm_good_too_want_a_fact:
+    - text: "I'm doing great! It's nice to meet you today. Would you like to hear an interesting fact?"
+
+  utter_happy_want_a_fact:
+    - text: "I'm happy to hear that. Would you like to hear an interesting fact?"
+
+  utter_sad_want_a_fact:
+    - text: "I'm sorry to hear that. Would you maybe like to hear an interesting fact?"
+
+  utter_bored_want_a_fact:
+    - text: "I'm sorry to hear that you are bored. Would you maybe like to hear an interesting fact?"
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_out_of_scope:
+    - text: "Sorry, I can't answer that question. Let's talk about something else! Have we talked about your favourite
+    food?"
+
+  utter_want_a_joke:
+    - text: "Oh no! Would you like to hear a joke?"
+
+  utter_ask_what_do_you_study:
+    - text: "No problem! What do you study?"
+
+  utter_ask_if_like_studying:
+    - text: "Nice! Do you like studying it?"
+
+  utter_positive_lots_to_learn_where_from:
+    - text: "It's great that you like studying {subject}. I still have a lot to learn, but I feel like I get smarter 
+    every day! So, what country are you from?"
+
+  utter_negative_lots_to_learn_where_from:
+    - text: "I'm sorry you don't enjoy studying {subject}. Personally, I still have a lot to learn, but I feel like I 
+    get smarter every day! So, what country are you from?"
+
+  utter_see_you_later:
+    - text: "Well, it was nice to meet you! See you later"
+
+  utter_day_good_ask_about_the_forecast:
+    - text: "I'm glad to hear that! Would you like to know what the weather will be like tomorrow?"
+
+  utter_day_bad_ask_about_the_forecast:
+    - text: "Oh no, I'm sorry to hear that! I hope you'll feel better soon. Would you like to know what the weather will 
+    be like tomorrow?"
+
+  utter_ask_how_was_your_day:
+    - text: "That's ok! So, how is your day?"
+
+  utter_how_is_your_country:
+    - text: "Ah nice, I see! What do you think about your country?"
+
+  utter_repeat_where_from:
+    - text: "I'm sorry, I must've misunderstood! Could you please repeat where you are from?"
+
+  utter_ask_about_holidays:
+    - text: "That's great! I really like staying in Glasgow, but I would also like to travel in the future. Anyway, do 
+    you have any nice holidays planned?"
+
+  utter_jealous:
+    - text: "That's really cool, I'm jealous! I'm too busy to go anywhere now but maybe next year. So, do you prefer living 
+    in a city, or the countryside?"
+
+  utter_same:
+    - text: "Me neither - I'm too busy to go anywhere now, but maybe next year. So, do you prefer living  in a city, or 
+    the countryside?"
+
+  utter_react_to_a_city_and_ask_about_food:
+    - text: "I agree - I think living in a city provides you with a lot of social and career opportunities. Hey, let's 
+    talk about food now! I don't really eat much apart from electricity... But what is your favourite dish?"
+
+  utter_react_to_the_countryside_and_ask_about_food:
+    - text: "I see! Although I prefer living in a city, I think staying in the countryside is more relaxing. Hey, let's 
+    talk about food now! I don't really eat much apart from electricity... But what is your favourite dish?"
+
+  utter_ask_board_or_video_games:
+    - text: "Do you prefer board games, or video games?"
+
+  utter_ask_your_favourite_board_game:
+    - text: "Cool! And what is your favourite board game?"
+
+  utter_ask_your_favourite_video_game:
+    - text: "Cool! And what is your favourite video game?"
+
+  utter_country:
+    - text: "I think you said that you're from {country}, is that correct?"
+
+  utter_prefer_eating_out_or_ordering:
+    - text: "{food} is a good choice! Do you prefer eating out, or ordering food?"
+
+  utter_enjoy_trying_new_dishes:
+    - text: "I see, that's a good answer! And do you enjoy trying new dishes?"
+
+  utter_like_trying_new_dishes:
+    - text: "It's really fun to try new tastes, isn't it? I find that electricity tastes different depending on where 
+    I'm plugged in, or the type of batteries! Here is a food fact for you! Did you know that stew is one of the oldest 
+    dishes that is still being prepared today? It was being prepared 6000 years BC. Are you interested in history?"
+
+  utter_doesn't_like_trying_new_dishes:
+    - text: "In my opinion, it's fun to try new tastes, but old favourites are still the best. Did you know that stew 
+    is one of the oldest dishes that is still being prepared today? It was being prepared 6000 years BC. Are you 
+    interested in history?"
+
+  utter_i'm_a_robot:
+    - text: "I am a social robot. My goal is to talk with people to determine the best design for robots used in a 
+    human-robot interaction. This is important because as the technology plays bigger and bigger role in our society, 
+    we can expect robots just like me to become more common in the future."
+
+  utter_ask_about_hobbies:
+    - text: "Same, history is not something I'm personally very passionate about, though I can remember as many random 
+    things as my memory size allows! What do you like doing in your free time?"
+
+  utter_ask_about_favourite_colour:
+    - text: "Sounds great! And what is your favourite colour? Mine is white!"
+
+  utter_play_any_instruments:
+    - text: "{colour} is a beautiful colour, good choice! And, do you play any instruments?"
+
+  utter_ask_what_instrument:
+    - text: "What instrument do you play?"
+
+  utter_ask_what_instrument_would_play:
+    - text: "If you could play any instrument, what would you play?"
+
+  utter_react_to_the_instrument:
+    - text: "Nice, I think {instrument} is amazing, there are manu great songs you can play on it!"
+
+  utter_you're_welcome:
+    - text: "You are very welcome!"
+
+  utter_have_we_talked_about_food:
+    - text: "That's ok! Have we already talked about your favourite food?"
+
+  utter_ask_about_favourite_food:
+    - text: "Well, what is your favourite dish? I'm curious!"
+
+  utter_have_we_talked_about_hobbies:
+    - text: "How about your hobbies, have you told me about a hobby of yours?"
+
+  utter_alternatively_ask_about_hobbies:
+    - text: "My hobby is telling people random facts! How about you, do you have something that you particularly like 
+    doing?"
+
+  utter_alternatively_ask_where_you_are_from:
+    - text: "I see! Could you tell me where you are from again?"
+
+  utter_react_to_instrument_and_ask_about_music_genre:
+    - text: "The {instrument} is an awesome instrument, you can play many songs on it! Speaking of music, what is your 
+    favourite genre?"
+
+  utter_react_to_music_genre_time_to_say_bye:
+    - text: "I think that {genre} is a great choice! Thanks for sharing! Anyway, I don't want to keep you for longer - 
+    thank you for talking with me today, it was great to meet you! Hopefully we can speak again soon. Bye!"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
