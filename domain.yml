@@ -70,12 +70,12 @@ slots:
     type: text
     mappings:
       - type: from_entity
-        entity: city
+        entity: genre
   colour:
     type: text
     mappings:
       - type: from_entity
-        entity: genre
+        entity: colour
 
 actions:
   - action_tell_a_joke
@@ -85,6 +85,7 @@ actions:
   - action_tell_random_historical_fact
   - action_different_reactions_to_misunderstanding
   - action_ask_the_user_to_rephrase
+  - action_react_to_colour_ask_about_instruments
 
 responses:
   utter_greet:

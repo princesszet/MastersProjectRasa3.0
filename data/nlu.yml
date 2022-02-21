@@ -515,6 +515,8 @@ nlu:
     - [green](colour)
     - [yellow](colour)
     - [orange](colour)
+    - [pink](colour)
+    - [grey](colour) is my favourite colour
     - my favourite colour is [blue](colour)
     - I think [purple](colour)
     - I think [green](colour)

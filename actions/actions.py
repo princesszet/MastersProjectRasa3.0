@@ -131,3 +131,47 @@ class AskTheUserToRephrase(Action):
         dispatcher.utter_message(text=request)
 
         return []
+
+class ReactToColourAskAboutInstruments(Action):
+    def name(self) -> Text:
+        return "action_react_to_colour_ask_about_instruments"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        colour = tracker.get_slot("colour")
+        print(colour)
+
+        if colour == "blue":
+            text = "Good choice, blue is the most common favourite colour in the world... And, do you play any " \
+                   "instruments?"
+        elif colour == "black":
+            text = "Cool, wearing black makes a person appear more powerful... And, do you play any instruments?"
+        elif colour == "orange":
+            text = "Interesting, the word 'orange' was first used to describe a fruit, then the colour was named after " \
+                   "it... And, do you play any instruments?"
+        elif colour == "green":
+            text = "Good choice, green is considered the colour of peace... And, do you play any instruments?"
+        elif colour == "red":
+            text = "Cool, red is actually the first colour a baby sees... And, do you play any instruments?"
+        elif colour == "brown":
+            text = "Interesting, brown is one of the most commonly used colours in art... And, do you play any " \
+                   "instruments?"
+        elif colour == "white":
+            text = "Good choice, white is an achromatic colour as it lacks hue... And, do you play any instruments?"
+        elif colour == "purple":
+            text = "Cool, purple is beautiful, but some people are scared of it which is called porphyrophobia... And, " \
+                   "do you play any instruments?"
+        elif colour == "yellow":
+            text = "Interesting, yellow is considered a lucky colour in China... And, do you play any instruments?"
+        elif colour == "pink":
+            text = "Good choice, pink is proved to have a calming effect... And, do you play any instruments?"
+        elif colour == "grey":
+            text = "Cool, grey is considered a neutral, calming colour... And, do you play any instruments?"
+        else:
+            text = "That is a beautiful colour, good choice! And, do you play any instruments?"
+
+        dispatcher.utter_message(text=text)
+
+        return []

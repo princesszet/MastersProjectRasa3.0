@@ -292,7 +292,7 @@ stories:
   - intent: video_game
   - action: utter_ask_about_favourite_colour
   - intent: colour
-  - action: utter_play_any_instruments
+  - action: action_react_to_colour_ask_about_instruments
   - intent: affirm
   - action: utter_ask_what_instrument
 
@@ -305,7 +305,7 @@ stories:
   - intent: video_game
   - action: utter_ask_about_favourite_colour
   - intent: colour
-  - action: utter_play_any_instruments
+  - action: action_react_to_colour_ask_about_instruments
 
 - story: The user shares their hobby + prefers video games + doesn't play any instrument
   steps:
@@ -316,7 +316,7 @@ stories:
   - intent: video_game
   - action: utter_ask_about_favourite_colour
   - intent: colour
-  - action: utter_play_any_instruments
+  - action: action_react_to_colour_ask_about_instruments
   - intent: deny
   - action: utter_ask_what_instrument_would_play
 
@@ -329,7 +329,7 @@ stories:
   - intent: board_game
   - action: utter_ask_about_favourite_colour
   - intent: colour
-  - action: utter_play_any_instruments
+  - action: action_react_to_colour_ask_about_instruments
   - intent: affirm
   - action: utter_ask_what_instrument
 
@@ -342,7 +342,7 @@ stories:
   - intent: board_game
   - action: utter_ask_about_favourite_colour
   - intent: colour
-  - action: utter_play_any_instruments
+  - action: action_react_to_colour_ask_about_instruments
 
 - story: The user shares their hobby + prefers board games + doesn't play any instrument
   steps:
@@ -353,7 +353,7 @@ stories:
   - intent: board_game
   - action: utter_ask_about_favourite_colour
   - intent: colour
-  - action: utter_play_any_instruments
+  - action: action_react_to_colour_ask_about_instruments
   - intent: deny
   - action: utter_ask_what_instrument_would_play
 
