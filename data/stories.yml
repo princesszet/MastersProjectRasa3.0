@@ -436,7 +436,6 @@ stories:
   - action: utter_react_to_music_genre_time_to_say_bye
   - or:
       - intent: goodbye
-      - intent: nice_to_meet_you
       - intent: thank_you
   - action: utter_goodbye
 

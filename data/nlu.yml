@@ -14,6 +14,7 @@ nlu:
     - let's go
     - hey dude
     - good afternoon
+    - hi nice to meet you
 
 - intent: how_are_you
   examples: |
@@ -396,16 +397,6 @@ nlu:
     - I'm clueless
     - don't know, sorry
     - I'm not certain
-
-- intent: nice_to_meet_you
-  examples: |
-    - nice to meet you too
-    - it was great to meet you
-    - it was great talking to you
-    - I enjoyed our conversation
-    - I enjoyed talking to you
-    - I liked getting to know you
-    - thanks for the chat
 
 - intent: genre
   examples: |
