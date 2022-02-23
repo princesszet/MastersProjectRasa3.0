@@ -96,6 +96,17 @@ nlu:
     - it doesn't
     - I didn't
 
+- intent: vague
+  examples: |
+    - sometimes
+    - from time to time
+    - not always
+    - occasionally
+    - every so often
+    - on occasions
+    - usually
+    - at times
+
 - intent: mood_great
   examples: |
     - perfect
@@ -126,7 +137,6 @@ nlu:
     - not good
     - not very good
     - extremely sad
-    - so saad
     - so sad
 
 - intent: mood_bored
@@ -189,7 +199,6 @@ nlu:
     - I do [economics](subject)
     - I do [maths](subject)
     - I do [anthropology](subject)
-    - I'm doing
     - [computing science](subject)
     - [computer science](subject)
     - [software engineering](subject)
@@ -266,7 +275,6 @@ nlu:
     - it's not the best country
     - I don't like it at all
     - it's very unpleasant
-    - it's very poor
 
 - intent: misunderstanding
   examples: |
@@ -326,7 +334,7 @@ nlu:
 - intent: instrument
   examples: |
     - I think the [guitar](instrument)
-    - I think the - [electric guitar](instrument)
+    - I think the [electric guitar](instrument)
     - I would play the [piano](instrument)
     - I would play the [saxophone](instrument)
     - I always wanted to learn how to play the [violin](instrument)
@@ -367,7 +375,6 @@ nlu:
     - I don't know
     - I'm not sure
     - I don't know how to answer this
-    - I don't know the answer
     - I'm clueless
     - don't know, sorry
     - I'm not certain

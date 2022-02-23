@@ -133,6 +133,9 @@ responses:
     - text: "I'm sorry you don't enjoy studying {subject}. Personally, I still have a lot to learn, but I feel like I 
     get smarter every day! So, what country are you from?"
 
+  utter_vague_lots_to_learn_where_from:
+    - text: "Oh I see - {subject} sounds interesting to me. So, what country are you from?"
+
   utter_see_you_later:
     - text: "Well, it was nice to meet you! See you later"
 
@@ -212,9 +215,6 @@ responses:
   utter_ask_about_favourite_colour:
     - text: "Sounds great! And what is your favourite colour? Mine is white!"
 
-  utter_play_any_instruments:
-    - text: "{colour} is a beautiful colour, good choice! And, do you play any instruments?"
-
   utter_ask_what_instrument:
     - text: "What instrument do you play?"
 
@@ -222,7 +222,7 @@ responses:
     - text: "If you could play any instrument, what would you play?"
 
   utter_react_to_the_instrument:
-    - text: "Nice, I think {instrument} is amazing, there are manu great songs you can play on it!"
+    - text: "Nice, I think {instrument} is amazing, there are many great songs you can play on it!"
 
   utter_you're_welcome:
     - text: "You are very welcome!"

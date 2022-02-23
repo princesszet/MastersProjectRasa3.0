@@ -141,7 +141,6 @@ class ReactToColourAskAboutInstruments(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         colour = tracker.get_slot("colour")
-        print(colour)
 
         if colour == "blue":
             text = "Good choice, blue is the most common favourite colour in the world... And, do you play any " \

@@ -179,6 +179,52 @@ stories:
   - intent: deny
   - action: utter_negative_lots_to_learn_where_from
 
+- story: Day was good + user wants the forecast + vague about studying
+  steps:
+  - intent: day_good
+  - action: utter_day_good_ask_about_the_forecast
+  - intent: affirm
+  # here the robot also asks what the user studies
+  - action: action_tell_the_weather_ask_what_do_you_study
+  - intent: i_study
+  - action: utter_ask_if_like_studying
+  - intent: vague
+  - action: utter_vague_lots_to_learn_where_from
+
+- story: Day was good + user doesn't wants the forecast + vague about studying
+  steps:
+  - intent: day_good
+  - action: utter_day_good_ask_about_the_forecast
+  - intent: deny
+  - action: utter_ask_what_do_you_study
+  - intent: i_study
+  - action: utter_ask_if_like_studying
+  - intent: vague
+  - action: utter_vague_lots_to_learn_where_from
+
+- story: Day was bad + user wants the forecast + vague about studying
+  steps:
+  - intent: day_bad
+  - action: utter_day_bad_ask_about_the_forecast
+  - intent: affirm
+  # here the robot also asks what the user studies
+  - action: action_tell_the_weather_ask_what_do_you_study
+  - intent: i_study
+  - action: utter_ask_if_like_studying
+  - intent: vague
+  - action: utter_vague_lots_to_learn_where_from
+
+- story: Day was bad + user doesn't wants the forecast + vague about studying
+  steps:
+  - intent: day_bad
+  - action: utter_day_bad_ask_about_the_forecast
+  - intent: deny
+  - action: utter_ask_what_do_you_study
+  - intent: i_study
+  - action: utter_ask_if_like_studying
+  - intent: vague
+  - action: utter_vague_lots_to_learn_where_from
+
 - story: The country is correct + going on holidays
   steps:
   - intent: place_from
