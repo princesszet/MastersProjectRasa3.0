@@ -5,6 +5,8 @@ intents:
   - goodbye
   - affirm
   - deny
+  - vague
+  - my_name_is
   - mood_great
   - mood_unhappy
   - mood_bored
@@ -44,6 +46,7 @@ entities:
   - instrument
   - genre
   - colour
+  - my_name_is
 
 slots:
   country:
@@ -76,8 +79,14 @@ slots:
     mappings:
       - type: from_entity
         entity: colour
+  name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: my_name_is
 
 actions:
+  - action_greet_the_user
   - action_tell_a_joke
   - action_tell_a_fact
   - action_tell_the_weather_ask_what_do_you_study

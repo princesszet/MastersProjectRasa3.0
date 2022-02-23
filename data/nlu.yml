@@ -76,6 +76,7 @@ nlu:
     - I do
     - it does
     - I did
+    - go ahead
 
 - intent: deny
   examples: |
@@ -122,6 +123,23 @@ nlu:
     - I am amazing
     - so good
     - so perfect
+
+- intent: my_name_is
+  examples: |
+    - I'm [Ellie](name)
+    - I'm [Daniel](name)
+    - my name is [Juliane](name)
+    - my name is [Chris](name)
+    - [Alice](name)
+    - [Aidan](name)
+    - I'm [Jamie](name)
+    - [Mario](name)
+    - [Marc](name)
+    - I'm [Anthony](name)
+    - [Jenny](name)
+    - [Emma](name)
+    - [Lucas](name)
+    - my name is [Peter](name)
 
 - intent: mood_unhappy
   examples: |

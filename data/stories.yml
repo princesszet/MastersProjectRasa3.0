@@ -9,6 +9,11 @@ stories:
       - intent: affirm
   - action: utter_greet
 
+- story: The user says their name
+  steps:
+  - intent: my_name_is
+  - action: action_greet_the_user
+
 - story: The user asks what the robot is
   steps:
   - intent: who_are_you
