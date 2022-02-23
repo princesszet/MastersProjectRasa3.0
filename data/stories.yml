@@ -19,20 +19,40 @@ stories:
   - intent: who_are_you
   - action: utter_i'm_a_robot
 
-- story: The user asks the robot how it is today + wants a fact
+- story: The user asks the robot how it is today + is a student
   steps:
   - intent: how_are_you
-  - action: utter_i'm_good_too_want_a_fact
+  - action: utter_i'm_good_too_are_you_a_student
   - intent: affirm
-  # here the robot also asks "How is your day?"
-  - action: action_tell_a_fact
+  - action: utter_ask_what_do_you_study
 
-- story: The user asks the robot how it is today + doesn't want a fact
+- story: The user likes studying
+  steps:
+  - intent: i_study
+  - action: utter_ask_if_like_studying
+  - intent: affirm
+  - action: utter_positive_lots_to_learn_where_from
+
+- story: The user doesn't like studying
+  steps:
+  - intent: i_study
+  - action: utter_ask_if_like_studying
+  - intent: deny
+  - action: utter_negative_lots_to_learn_where_from
+
+- story: The user is vague about studying
+  steps:
+  - intent: i_study
+  - action: utter_ask_if_like_studying
+  - intent: vague
+  - action: utter_vague_lots_to_learn_where_from
+
+- story: The user asks the robot how it is today + is not a student
   steps:
   - intent: how_are_you
-  - action: utter_i'm_good_too_want_a_fact
+  - action: utter_i'm_good_too_are_you_a_student
   - intent: deny
-  - action: utter_ask_how_was_your_day
+  - action: utter_ask_where_from
 
 - story: The user is in a good mood + wants a fact
   steps:
@@ -121,7 +141,7 @@ stories:
   - intent: day_good
   - action: utter_day_good_ask_about_the_forecast
   - intent: deny
-  - action: utter_ask_what_do_you_study
+  - action: utter_no_problem_ask_what_do_you_study
   - intent: i_study
   - action: utter_ask_if_like_studying
   - intent: affirm
@@ -167,7 +187,7 @@ stories:
   - intent: day_bad
   - action: utter_day_bad_ask_about_the_forecast
   - intent: deny
-  - action: utter_ask_what_do_you_study
+  - action: utter_no_problem_ask_what_do_you_study
   - intent: i_study
   - action: utter_ask_if_like_studying
   - intent: affirm
@@ -201,7 +221,7 @@ stories:
   - intent: day_good
   - action: utter_day_good_ask_about_the_forecast
   - intent: deny
-  - action: utter_ask_what_do_you_study
+  - action: utter_no_problem_ask_what_do_you_study
   - intent: i_study
   - action: utter_ask_if_like_studying
   - intent: vague
@@ -224,7 +244,7 @@ stories:
   - intent: day_bad
   - action: utter_day_bad_ask_about_the_forecast
   - intent: deny
-  - action: utter_ask_what_do_you_study
+  - action: utter_no_problem_ask_what_do_you_study
   - intent: i_study
   - action: utter_ask_if_like_studying
   - intent: vague
