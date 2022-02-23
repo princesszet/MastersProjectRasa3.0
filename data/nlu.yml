@@ -14,6 +14,7 @@ nlu:
     - let's go
     - hey dude
     - good afternoon
+    - hi nice to meet you
 
 - intent: how_are_you
   examples: |
@@ -70,12 +71,13 @@ nlu:
     - correct
     - yeah
     - sure
-    - ok
+    - why not
     - okay
     - it is
     - I do
     - it does
     - I did
+    - go ahead
 
 - intent: deny
   examples: |
@@ -122,6 +124,23 @@ nlu:
     - I am amazing
     - so good
     - so perfect
+
+- intent: my_name_is
+  examples: |
+    - I'm [Ellie](name)
+    - I'm [Daniel](name)
+    - my name is [Juliane](name)
+    - my name is [Chris](name)
+    - [Alice](name)
+    - [Aidan](name)
+    - I'm [Jamie](name)
+    - [Mario](name)
+    - [Marc](name)
+    - I'm [Anthony](name)
+    - [Jenny](name)
+    - [Emma](name)
+    - [Lucas](name)
+    - my name is [Peter](name)
 
 - intent: mood_unhappy
   examples: |
@@ -378,16 +397,6 @@ nlu:
     - I'm clueless
     - don't know, sorry
     - I'm not certain
-
-- intent: nice_to_meet_you
-  examples: |
-    - nice to meet you too
-    - it was great to meet you
-    - it was great talking to you
-    - I enjoyed our conversation
-    - I enjoyed talking to you
-    - I liked getting to know you
-    - thanks for the chat
 
 - intent: genre
   examples: |

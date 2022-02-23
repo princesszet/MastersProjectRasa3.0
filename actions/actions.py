@@ -174,3 +174,21 @@ class ReactToColourAskAboutInstruments(Action):
         dispatcher.utter_message(text=text)
 
         return []
+
+class GreetTheUser(Action):
+    def name(self) -> Text:
+        return "action_greet_the_user"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        name = tracker.get_slot("name")
+        if name is None:
+            greeting = "Hey! It's nice to meet you today. How are you?"
+        else:
+            greeting = "Hey " + name + "! It's nice to meet you today. How are you?"
+
+        dispatcher.utter_message(text=greeting)
+
+        return []

@@ -5,6 +5,8 @@ intents:
   - goodbye
   - affirm
   - deny
+  - vague
+  - my_name_is
   - mood_great
   - mood_unhappy
   - mood_bored
@@ -21,7 +23,6 @@ intents:
   - hobby
   - thank_you
   - dont_know_what_to_say
-  - nice_to_meet_you
   - food
   - instrument
   - country
@@ -44,6 +45,7 @@ entities:
   - instrument
   - genre
   - colour
+  - my_name_is
 
 slots:
   country:
@@ -76,8 +78,14 @@ slots:
     mappings:
       - type: from_entity
         entity: colour
+  name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: my_name_is
 
 actions:
+  - action_greet_the_user
   - action_tell_a_joke
   - action_tell_a_fact
   - action_tell_the_weather_ask_what_do_you_study
@@ -97,8 +105,8 @@ responses:
   utter_me_too:
     - text: "Me too!"
 
-  utter_i'm_good_too_want_a_fact:
-    - text: "I'm doing great! It's nice to meet you today. Would you like to hear an interesting fact?"
+  utter_i'm_good_too_are_you_a_student:
+    - text: "I'm doing great! It's nice to meet you today. Are you a student?"
 
   utter_happy_want_a_fact:
     - text: "I'm happy to hear that. Would you like to hear an interesting fact?"
@@ -119,8 +127,11 @@ responses:
   utter_want_a_joke:
     - text: "Oh no! Would you like to hear a joke?"
 
-  utter_ask_what_do_you_study:
+  utter_no_problem_ask_what_do_you_study:
     - text: "No problem! What do you study?"
+
+  utter_ask_what_do_you_study:
+    - text: "And what do you study?"
 
   utter_ask_if_like_studying:
     - text: "Nice! Do you like studying it?"
@@ -135,6 +146,9 @@ responses:
 
   utter_vague_lots_to_learn_where_from:
     - text: "Oh I see - {subject} sounds interesting to me. So, what country are you from?"
+
+  utter_ask_where_from:
+    - text: "Where are you from?"
 
   utter_see_you_later:
     - text: "Well, it was nice to meet you! See you later"
