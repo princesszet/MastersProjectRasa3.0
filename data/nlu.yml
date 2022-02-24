@@ -202,6 +202,7 @@ nlu:
 
 - intent: day_bad
   examples: |
+    - it was bad
     - it is bad
     - my day is not good
     - my day wasn't good
