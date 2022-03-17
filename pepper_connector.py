@@ -18,7 +18,7 @@ class PepperConnector(InputChannel):
         pepper_webhook = Blueprint("pepper_webhook", __name__)
 
         @pepper_webhook.route("/", methods=["GET"])
-        async def health(re,quest):
+        async def health(request):
             return response.json({"status": "ok"})
 
         @pepper_webhook.route("/webhook", methods=["POST"])
