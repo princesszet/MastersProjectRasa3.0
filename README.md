@@ -14,5 +14,3 @@ In the secon one, run **rasa run actions**
 Once the server is running, run in the third one **ngrok http 5005**
 
 If you don't have ngrok installed, follow the instructions: https://ngrok.com/download
-
-
